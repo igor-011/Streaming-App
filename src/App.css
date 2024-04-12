@@ -1,0 +1,444 @@
+body{
+  background-color: #222020;
+}
+body::-webkit-scrollbar{
+  width: 4px; 
+  background-color:#032541;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar thumb color*/
+  border-radius: 4px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Scrollbar thumb color on hover */
+}
+.background_container {
+  background-color: #222020;
+}
+@media (min-width: 1023px) {
+
+button {
+  margin-left: 2.8%;
+  font-size: 0rem;
+  border-radius: 0.5rem;
+  border: 1px solid #032541;
+  background-color: #555657;
+  color: white;
+  transition: 0.5s;
+  width: 0px;
+  height: 0px;
+  padding: 0;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #303233;
+}
+.buttonTouch{
+  font-size: 1.5rem;
+  width: 185px;
+  height: 32px;
+}
+.imag:hover button{
+  font-size: 1.5rem;
+  width: 185px;
+  height: 32px;
+}
+img{
+  cursor: pointer;
+  max-width: 200px;
+  height: 300px;
+  object-fit: contain;
+  pointer-events: none;
+}
+.row-title {
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  font-weight: bold;
+  margin-left: 20px; /* Adjust the left margin as needed */
+  margin-top: 20px; /* Adjust the top margin as needed */
+}
+.Titles{
+  margin: 10px;
+  margin-top: 1rem;
+  font-size: 1.9rem;
+  margin-left: 2%;
+  color: white;
+  background-color: #222020;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-color: #222020;
+  width: 100%;
+  overflow-x: scroll;
+  user-select: none;
+}
+.Streaming{
+  color: white;
+  margin-left: 2.3%;
+}
+.Streamify{
+  color: rgb(18, 235, 29);
+  font-size: 32px;
+}
+.top-text{
+  font-size: 41px;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+.head-text{
+  font-size: 19px;
+  width: 35%;
+  margin-bottom: 2.3rem;
+}
+.Subs{
+  border-radius: 6px;
+  font-size: 15px;
+  position: absolute;
+  right: 9.4%;
+  top: 1.7%;
+  background-color: rgb(16, 214, 26);
+  width: 162px;
+  height: 33px;
+}
+.Subs:hover{
+  background-color: rgb(19, 252, 31);
+}
+.Log-in{
+  border-radius: 6%;
+  font-size: 1.2rem;
+  position: absolute;
+  border: 1px solid white;
+  background-color: black;
+  top: 2%;
+  right: 1.8%;
+  width: 75px;
+  height: 30px;
+}
+.Log-in:hover{
+  background-color: white;
+  color: black;
+}
+.flex-container::-webkit-scrollbar {
+  width: 0%;
+  height: 0px;  
+}
+.flex-container::-webkit-scrollbar-thumb {
+  background-color: #888;   
+  border-radius: 4px;
+}
+.flex-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+.cont:hover .text {
+  opacity: 1;
+  transform: translateY(-250%);
+  transition: 0.5s;
+}
+
+.movie_item {
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.movie_item img {
+  border-radius: 3rem;
+  box-shadow: 3rem;
+}
+
+.movie_name {
+  padding-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+}
+
+@media (min-width:600px) and (max-width: 1023px){
+  :root{
+    font-size: 15px;
+  }
+  button {
+    margin-left: 7%;
+    font-size: 0rem;
+    border-radius: 0.5rem;
+    border: 1px solid #032541;
+    background-color: #555657;
+    color: white;
+    transition: 0.5s;
+    width: 0px;
+    height: 0px;
+    padding: 0;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: #303233;
+  }
+  .buttonTouch{
+    font-size: 1rem;
+    width: 125px;
+    height: 32px;
+  }
+  .imag:hover button{
+    font-size: 1rem;
+    width: 125px;
+    height: 32px;
+  }
+  img{
+    border-radius: 5%;
+    cursor: pointer;
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  .row-title {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    margin-left: 2%; /* Adjust the left margin as needed */
+    margin-top: 2%; /* Adjust the top margin as needed */
+  }
+  .Titles{
+    font-size: 1.9rem;
+    margin: 1%;
+    margin-left: 2%;
+    color: white;
+    background-color: #222020;
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background-color: #222020;
+    width: 100%;
+    overflow-x: scroll;
+    user-select: none;
+  }
+  .Streaming{
+    color: white;
+    margin-left: 2.3%;
+  }
+  .Streamify{
+    color: rgb(18, 235, 29);
+    font-size: 32px;
+  }
+  .top-text{
+    font-size: 2.8rem;
+    margin-top: 5%;
+    margin-bottom: 1%;
+  }
+  .head-text{
+    font-size: 1.35rem;
+    width: 60%;
+    margin-top: 2%;
+    margin-bottom: 2.3rem;
+  }
+  .Subs{
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    position: absolute;
+    right: 11%;
+    top: 1.7%;
+    background-color: rgb(16, 214, 26);
+    width: 145px;
+    height: 31px;
+  }
+  .Subs:hover{
+    background-color: rgb(19, 252, 31);
+  }
+  .Log-in{
+    border-radius: 6%;
+    font-size: 1.2rem;
+    position: absolute;
+    border: 1px solid white;
+    background-color: black;
+    top: 2%;
+    right: 1%;
+    width: 55px;
+    height: 30px;
+  }
+  .Log-in:hover{
+    background-color: white;
+    color: black;
+  }
+  .flex-container::-webkit-scrollbar {
+    width: 0%;
+    height: 0px;  
+  }
+  .flex-container::-webkit-scrollbar-thumb {
+    background-color: #888;   
+    border-radius: 4px;
+  }
+  .flex-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+  .movie_item {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  .movie_item img {
+    border-radius: 3rem;
+    box-shadow: 3rem;
+  }
+
+  .movie_name {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+@media (min-width:240px) and (max-width:599px){
+  :root{
+    font-size: 12px;
+  }
+  button {
+    margin-left: 2.8%;
+    font-size: 0rem;
+    border-radius: 0.5rem;
+    border: 1px solid #032541;
+    background-color: #555657;
+    color: white;
+    transition: 0.5s;
+    width: 0px;
+    height: 0px;
+    padding: 0;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: #303233;
+  }
+  .buttonTouch{
+    font-size: 1.2rem;
+    width: 70px;
+    height: 25px;
+  }
+  .imag:hover button{
+    font-size: 1.2rem;
+    width: 70px;
+    height: 25px;
+  }
+  img{
+    cursor: pointer;
+    max-width: 100px;
+    height: 120px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  .row-title {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    margin-left: 20px; /* Adjust the left margin as needed */
+    margin-top: 20px; /* Adjust the top margin as needed */
+  }
+  .Titles{
+    margin: 1%;
+    margin-top: 1.4%;
+    font-size: 1.5rem;
+    margin-left: 2%;
+    color: white;
+    background-color: #222020;
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background-color: #222020;
+    width: 100%;
+    overflow-x: scroll;
+    user-select: none;
+  }
+  .Streaming{
+    color: white;
+    margin-left: 2.3%;
+  }
+  .Streamify{
+    color: rgb(18, 235, 29);
+    font-size: 2.2rem;
+  }
+  .top-text{
+    font-size: 2.2rem;
+    margin-top: 10%;
+    margin-bottom: 1%;
+  }
+  .head-text{
+    font-size: 1.4rem;
+    width: 80%;
+    margin-bottom: 12%;
+    margin-left: 1%;
+  }
+  .Subs{
+    border-radius: 6px;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 2%;
+    top: 1%;
+    background-color: rgb(16, 214, 26);
+    width: 80px;
+    height: 35px;
+  }
+  .Subs:hover{
+    background-color: rgb(19, 252, 31);
+  }
+  .Log-in{
+    border-radius: 6%;
+    font-size: 1.2rem;
+    position: absolute;
+    border: 1px solid white;
+    background-color: black;
+    top: 7%;
+    right: 3%;
+    width: 75px;
+    height: 30px;
+  }
+  .Log-in:hover{
+    background-color: white;
+    color: black;
+  }
+  .flex-container::-webkit-scrollbar {
+    width: 0%;
+    height: 0px;  
+  }
+  .flex-container::-webkit-scrollbar-thumb {
+    background-color: #888;   
+    border-radius: 4px;
+  }
+  .flex-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  .cont:hover .text {
+    opacity: 1;
+    transform: translateY(-250%);
+    transition: 0.5s;
+  }
+
+  .movie_item {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+  .movie_item img {
+    border-radius: 3rem;
+    box-shadow: 3rem;
+  }
+
+  .movie_name {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
