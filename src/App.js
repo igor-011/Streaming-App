@@ -42,7 +42,7 @@ function App() {
     };
 
     fetchDataForAllRows();
-  }, [dataRows]);
+  }, []);
 
 
   const handleOnMouseDown = (e, index) => {

@@ -4,8 +4,6 @@ export function FetchYouTubeTrailerUrl({ item }) {
 
   const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
   React.useEffect(() => {
-    console.log(process.env.REACT_APP_YOUTUBE_API_KEY)
-    console.log(apiKey)
     async function fetchTrailerUrl() {
       const searchQuery = `${item.original_title ? item.original_title : item.original_name} trailer`;
       console.log(item)
