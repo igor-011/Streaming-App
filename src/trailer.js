@@ -16,7 +16,7 @@ export function FetchYouTubeTrailerUrl({ item }) {
       try {
         const response = await fetch(url);
         const data = await response.json();
-
+        
         const trailer = data.items[0];
 
 
