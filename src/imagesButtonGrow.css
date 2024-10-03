@@ -1,0 +1,36 @@
+.imog {
+    background-color: rgb(21, 21, 21);
+}
+
+.buttons {
+    background-color: rgb(30, 30, 30);
+    width: 0px;
+    height: 0px;
+    border: 0px solid black;
+    font-size: 0px;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* When hovering over the parent element, the button grows */
+.imog:hover .buttons {
+    width: 200px; /* Adjust width as needed */
+    height: 35px; /* Adjust height as needed */
+    border: 1px solid black;
+    font-size: 16px;
+    background-color: rgb(28, 28, 28);
+}
+
+/* When hovering directly over the button, change its background color */
+.imog:hover .buttons:hover {
+    background-color: rgb(20, 20,20); /* Change color on hover */
+    cursor: pointer;
+}
+
+@media (max-width: 589px) {
+    .imog:hover .buttons {
+        width: 100px;
+        height: 23px;
+        border: 1px solid black;
+        font-size: 12px;
+    }
+}

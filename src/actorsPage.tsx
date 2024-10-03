@@ -6,9 +6,10 @@ import { GetMovieCredits } from "./movieSliceCredits";
 import { GetTvCombinedCredits } from "./tvSlice";
 import { GetTvCredits } from "./tvSliceCredits";
 import { GetTrailerGenerator } from "./trailerGenerations";
-import { updateApiData, makeEven } from "./dataHistory";
+import { updateApiData, makeEven, setIsnotInView, setViewsValueTrue } from "./dataHistory";
 import { resetTrailerData } from "./trailerGenerations";
 import SearchBar from "./searchBar";
+import './imagesButtonGrow.css'
 
 
 export default function ActorsPage() {
@@ -21,6 +22,8 @@ export default function ActorsPage() {
   const items = useAppSelector(state => state.dataHistory.renderItem)
   let actorCredits = useAppSelector(state => state.actorCredits.data)
   
+  const isInview = useAppSelector(state => state.dataHistory.isInView)
+  const viewValueBool = useAppSelector(state => state.dataHistory.viewValueBool)
 
   const handleMoviePageChange = (movieId: number) =>{
     dispatch(GetMovieCombinedCredits(movieId))
@@ -58,8 +61,12 @@ export default function ActorsPage() {
   const history = window.history
 
   useEffect(() =>{
+    if(viewValueBool === false && isInview === true){
+      dispatch(setIsnotInView())
+      dispatch(setViewsValueTrue())
+    }
     window.scrollTo(0,0)
-    console.log('index is: ',index, 'dataHistory is: ', dataHistory)
+    console.log('index is: ',index, 'dataHistory is: ', dataHistory, 'isinview: ', isInview)
     setCurrentCast(filterItems)
     setCurrentActorsCredits(actorCredits)
 
@@ -72,7 +79,7 @@ export default function ActorsPage() {
       console.log(dataHistory)
     } 
 
-  }, [actorCredits, index, items,])
+  }, [actorCredits, index, items, isInview])
   return(
     <div className="mt-10 bg-[rgb(21,21,21)] text-white">
       <SearchBar />
@@ -93,7 +100,7 @@ export default function ActorsPage() {
         {currentCast && currentCast
         .map((item: any, index:number) =>(
            
-          <div onClick={() => handlePageMedia(index, item.title || item.name )} key={index+1} className="flex items-center flex-col p-1 sm:p-2 md:p-4 lg:p-6 cursor-pointer"> 
+          <div /*onClick={() => handlePageMedia(index, item.title || item.name )} key={index+1}*/ className="imog flex items-center flex-col p-1 sm:p-2 md:p-4 lg:p-6"> 
           {
             item?.poster_path ? (
               <img className="w-40 sm:w-48 lg:w-64 object-contain rounded-lg" src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} />
@@ -103,8 +110,9 @@ export default function ActorsPage() {
               <p>sorry no show photo</p>
             )
           }
-          <div className="flex  flex-col text-center text-sm md:text-md w-24 m-2">
-          {('title' in item) ? <p className="">{item.title}</p> : <p>{item.name}</p>}
+          <div className="flex  flex-col items-center text-center text-sm md:text-md w-48 m-2">
+          <button className="buttons " onClick={() => handlePageMedia(index, item.title || item.name )} key={index+1}>see more</button>
+          {('title' in item) ? <p>{item.title}</p> : <p>{item.name}</p>}
           <p>{item.media_type}</p>
           <p>{item.vote_average}</p>
           </div>

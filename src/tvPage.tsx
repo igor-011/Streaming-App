@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "./store";
 import { useNavigate } from "react-router-dom";
 import { GetActorCombinedCredits } from "./actorsSlice";
-import { updateApiData, makeEven } from "./dataHistory";
+import { updateApiData, makeEven, setIsnotInView, setViewsValueTrue } from "./dataHistory";
 import SearchBar from "./searchBar";
+import './imagesButtonGrow.css'
 
 export default function TvPage(){
     const dispatch = useAppDispatch()
@@ -12,6 +13,9 @@ export default function TvPage(){
     const dataHistory = useAppSelector(state => state.dataHistory.data)
     const items = useAppSelector(state => state.dataHistory.renderItem)
     const index = useAppSelector(state => state.dataHistory.currentIndex)
+
+    const isInview = useAppSelector(state => state.dataHistory.isInView)
+    const viewValueBool = useAppSelector(state => state.dataHistory.viewValueBool)
 
     let tvCredits = useAppSelector(state => state.tvCredits.data)
     let tvCombined = useAppSelector(state => state.tvCombined.data)
@@ -28,12 +32,17 @@ export default function TvPage(){
     const [currentTVTrailer, setCurrentTvTrailer] = useState(showTrailer)
 
     useEffect(() => {
+        if(viewValueBool === false && isInview === true){
+            dispatch(setIsnotInView())
+            dispatch(setViewsValueTrue())
+          }
         window.scrollTo(0,0)
         if (showTrailer && !trailerLoaded) {
           setLoadingTrailer(false);
           setTrailerLoaded(true);
         }
 
+        console.log('index: ', index, 'isinView: ', isInview)
         setCurrentTvCredits(tvCombined)
         setCurrentTvCast(filterItems)
         setCurrentTvTrailer(showTrailer)
@@ -47,7 +56,7 @@ export default function TvPage(){
             console.log(dataHistory)
         } 
 
-      }, [showTrailer, index, items, tvCombined, tvCredits]);
+      }, [showTrailer, index, items, tvCombined, tvCredits, isInview]);
     
 
     const handleActorPage = (id:number) =>{
@@ -103,9 +112,10 @@ export default function TvPage(){
             <div className="flex flex-wrap justify-center">
             {currentTvCast && currentTvCast
             .map((tvCombined:any, index:number) => (
-                <div className="m-2 lg:m-8 flex flex-col items-center text-center cursor-pointer" onClick={() =>handleActorPage(tvCombined.id)} key={index+1}>
+                <div className="imog m-2 lg:m-8 flex flex-col items-center text-center" /*onClick={() =>handleActorPage(tvCombined.id)} key={index+1}*/>
                     <img className="w-40 md:w-60 md:h-90 md:object-contain rounded-lg" src={`https://image.tmdb.org/t/p/w500${tvCombined.profile_path}`} alt="" />
-                    <div>
+                    <div className="w-48">
+                    <button className="buttons mt-2" onClick={() =>handleActorPage(tvCombined.id)} key={index+1}>see more</button>
                     <p>Name: {tvCombined.name}</p>
                     <p>Character: {tvCombined.character}</p>
                     <p>Known for: {tvCombined.known_for_department}</p>

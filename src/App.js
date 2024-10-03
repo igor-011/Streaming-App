@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { FetchYouTubeTrailerUrl } from './trailer';
 import SearchBar from './searchBar';
-import { setViewsValueFalse, setIsnotInView } from './dataHistory';
-import { useAppDispatch } from './store';
+import dataHistory, { setViewsValueFalse, setIsnotInView, } from './dataHistory';
+import { useAppDispatch, useAppSelector } from './store';
 function App() {
   const [dataRows, setDataRows] = useState([
     { title: 'Top Rated Movies', subject: 'trending', type: 'all/day', data: [] },
@@ -18,8 +18,12 @@ function App() {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [selectedTrailerUrl, setSelectedTrailerUrl] = useState('');
+
+  const stackHistory = useAppSelector(state => state.dataHistory.stackhistory)
+  const index = useAppSelector(state => state.dataHistory.currentIndex)
   const dispatch = useAppDispatch()
   useEffect(() => {
+    console.log(window.history.state.idx, stackHistory, 'w -s:', window.history.state.idx - stackHistory -1, 'index: ', index)
     dispatch(setViewsValueFalse())
     dispatch(setIsnotInView())
     const fetchDataForAllRows = async () => {

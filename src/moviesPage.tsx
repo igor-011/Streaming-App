@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { GetActorCombinedCredits } from "./actorsSlice";
 import { useAppSelector, useAppDispatch } from "./store";
 import { useNavigate } from "react-router-dom";
-import { updateApiData, makeEven } from "./dataHistory";
+import { updateApiData, makeEven, setIsnotInView, setViewsValueTrue } from "./dataHistory";
 import SearchBar from "./searchBar";
+import './imagesButtonGrow.css'
 
 
 export default function MoviePages() {
@@ -13,6 +14,9 @@ export default function MoviePages() {
   const dataHistory = useAppSelector((state) => state.dataHistory.data);
   const index = useAppSelector(state => state.dataHistory.currentIndex)
   const items = useAppSelector(state => state.dataHistory.renderItem)
+
+  const isInview = useAppSelector(state => state.dataHistory.isInView)
+  const viewValueBool = useAppSelector(state => state.dataHistory.viewValueBool)
 
   let movieCredits = useAppSelector((state) => state.movieCredits.data);
   let movieCombinedCredits = useAppSelector((state) => state.movieCombined.data);
@@ -28,6 +32,10 @@ export default function MoviePages() {
   const [currentMovieCredits, setCurrentMovieCredits] = useState(movieCombinedCredits)
 
   useEffect(() => {
+    if(viewValueBool === false && isInview === true){
+      dispatch(setIsnotInView())
+      dispatch(setViewsValueTrue())
+    }
     window.scrollTo(0,0)
     setCurrentMovieCredits(movieCombinedCredits)
     setCurrentMovieCast(filterItems)
@@ -38,7 +46,7 @@ export default function MoviePages() {
       setTrailerLoaded(true);
     }
 
-    console.log('index is:', index)
+    console.log('index is:', index, 'isInView: ', isInview)
 
     if(items=== true){
       if(dataHistory[index]){
@@ -48,7 +56,7 @@ export default function MoviePages() {
       }
       console.log(dataHistory)
     }
-  }, [showTrailer, index, items, movieCombinedCredits,movieCredits]);
+  }, [showTrailer, index, items, movieCombinedCredits,movieCredits, isInview]);
 
   const handleActorPage = (id: number) => {
     if(items === true){
@@ -114,9 +122,10 @@ export default function MoviePages() {
             <div className="flex flex-wrap justify-center">
             {currentMovieCast && currentMovieCast
             .map((item:any, index:number) => (
-                <div className="m-2 lg:m-8 flex flex-col items-center cursor-pointer" onClick={() =>handleActorPage(item.id)} key={index+1}>
+                <div className="imog m-2 lg:m-8 flex flex-col items-center" /*onClick={() =>handleActorPage(item.id)} key={index+1}*/>
                     <img className="w-40 md:w-60 md:h-90 md:object-contain rounded-lg" src={`https://image.tmdb.org/t/p/w500${item.profile_path}`} alt="" />
-                    <div className=" flex flex-col items-center text-center">
+                    <div className=" flex flex-col items-center text-center w-48">
+                    <button className="buttons mt-2" onClick={() =>handleActorPage(item.id)} key={index+1}>see more</button>
                     <p>name: {item.name}</p>
                     <p>character: {item.character}</p>
                     <p>known for: {item.known_for_department}</p>
