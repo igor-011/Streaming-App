@@ -8,7 +8,8 @@ const initialState = {
     stackhistory: 0,
     viewsValue: 0,
     viewValueBool: false,
-    isInView: false
+    isInView: false,
+    SeachBarInputUserView: ''
 }
 
 const dataHistory = createSlice({
@@ -54,10 +55,13 @@ const dataHistory = createSlice({
       },
       setIsnotInView:(state)=>{
         state.isInView = false
+      },
+      setSearchBarInput:(state, action)=>{
+        state.SeachBarInputUserView = action.payload
       }
     },
 
   });
 
-export const { updateApiData, renderItems, unrenderItems, updateIndex, updateHistory, makeEven, setStackHistory, setViewsValueFalse, setViewsValueTrue, setIsInView, setIsnotInView} = dataHistory.actions;
+export const { updateApiData, renderItems, unrenderItems, updateIndex, updateHistory, makeEven, setStackHistory, setViewsValueFalse, setViewsValueTrue, setIsInView, setIsnotInView, setSearchBarInput} = dataHistory.actions;
 export default dataHistory.reducer;

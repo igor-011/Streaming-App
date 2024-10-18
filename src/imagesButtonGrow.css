@@ -3,7 +3,7 @@
 }
 
 .buttons {
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(61, 61, 61);
     width: 0px;
     height: 0px;
     border: 0px solid black;
@@ -17,12 +17,12 @@
     height: 35px; /* Adjust height as needed */
     border: 1px solid black;
     font-size: 16px;
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(34, 33, 33);
 }
 
 /* When hovering directly over the button, change its background color */
 .imog:hover .buttons:hover {
-    background-color: rgb(20, 20,20); /* Change color on hover */
+    background-color: rgb(27, 27, 27); /* Change color on hover */
     cursor: pointer;
 }
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GetData } from "./userSlice";
 import { useAppDispatch, useAppSelector } from "./store";
-import { setIsnotInView, setViewsValueFalse, updateIndex } from "./dataHistory";
+import { setIsnotInView, setViewsValueFalse, updateIndex, setSearchBarInput } from "./dataHistory";
 import Swal from "sweetalert2";
 import hirasawa from './hirasawa.jpg';
 import kana from './kana cabeça na mesa.jpg'
@@ -59,6 +59,7 @@ export default function SearchBar() {
       const handleKeyPress = (event:any) => {
         if (event.key === "Enter") {
           handleSearch();
+          dispatch(setSearchBarInput(input))
         }
       };
 

@@ -122,7 +122,7 @@ export default function MoviePages() {
             <div className="flex flex-wrap justify-center">
             {currentMovieCast && currentMovieCast
             .map((item:any, index:number) => (
-                <div className="imog m-2 lg:m-8 flex flex-col items-center" /*onClick={() =>handleActorPage(item.id)} key={index+1}*/>
+                <div className="imog m-2 lg:m-8 flex flex-col items-center cursor-pointer" onClick={() =>handleActorPage(item.id)}>
                     <img className="w-40 md:w-60 md:h-90 md:object-contain rounded-lg" src={`https://image.tmdb.org/t/p/w500${item.profile_path}`} alt="" />
                     <div className=" flex flex-col items-center text-center w-48">
                     <button className="buttons mt-2" onClick={() =>handleActorPage(item.id)} key={index+1}>see more</button>

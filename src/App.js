@@ -106,7 +106,9 @@ function App() {
               onTouchMove={(e) => handleOnTouchMove(e, index)}
               onTouchEnd={handleOnTouchEnd}
             >
-              {row.data.map((item) => (
+              {row.data
+              .filter((item)=> item.poster_path)
+              .map((item) => (
                 <div className="movie_item  " key={item.id}>
                   <div className='imag ' >
                     {

@@ -55,7 +55,7 @@ export default function ActorsPage() {
   }
   
   let filterItems:any = []
-  filterItems = actorCredits?.combined_credits.cast.filter((item) => item.poster_path || item.backdrop_path)
+  filterItems = actorCredits?.combined_credits.cast.filter((item) => item.poster_path)
   const [currentCast , setCurrentCast] = useState(filterItems)
   const [currentActorCredits, setCurrentActorsCredits] = useState(actorCredits)
   const history = window.history
@@ -100,7 +100,7 @@ export default function ActorsPage() {
         {currentCast && currentCast
         .map((item: any, index:number) =>(
            
-          <div /*onClick={() => handlePageMedia(index, item.title || item.name )} key={index+1}*/ className="imog flex items-center flex-col m-1 sm:m-2 md:m-4 lg:m-6"> 
+          <div onClick={() => handlePageMedia(index, item.title || item.name )} className="imog flex items-center flex-col m-1 sm:m-2 md:m-4 lg:m-6 cursor-pointer"> 
           {
             item?.poster_path ? (
               <img className="w-40 sm:w-48 md:w-60 lg:w-64 object-contain rounded-lg" src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} />

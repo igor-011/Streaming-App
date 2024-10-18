@@ -112,7 +112,7 @@ export default function TvPage(){
             <div className="flex flex-wrap justify-center">
             {currentTvCast && currentTvCast
             .map((tvCombined:any, index:number) => (
-                <div className="imog m-2 lg:m-8 flex flex-col items-center text-center" /*onClick={() =>handleActorPage(tvCombined.id)} key={index+1}*/>
+                <div className="imog m-2 lg:m-8 flex flex-col items-center text-center cursor-pointer" onClick={() =>handleActorPage(tvCombined.id)}>
                     <img className="w-40 md:w-60 md:h-90 md:object-contain rounded-lg" src={`https://image.tmdb.org/t/p/w500${tvCombined.profile_path}`} alt="" />
                     <div className="w-48">
                     <button className="buttons mt-2" onClick={() =>handleActorPage(tvCombined.id)} key={index+1}>see more</button>

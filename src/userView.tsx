@@ -10,11 +10,13 @@ import { GetTvCredits } from "./tvSliceCredits";
 import { GetTrailerGenerator, resetTrailerData } from "./trailerGenerations";
 import { makeEven, setViewsValueTrue, setIsInView, setIsnotInView } from "./dataHistory"
 import SearchBar from "./searchBar";
+import kanaCabeçaMesa from './kana cabeça na mesa.jpg'
 
 export default function UserView() {
     const dispatch = useAppDispatch();
     const navigate = useNavigate()
     const data = useAppSelector(state => state.user.data) as personApiData | null;
+    const inputBar = useAppSelector(state => state.dataHistory.SeachBarInputUserView)
     const [filteredItems, setFilteredItems] = useState<any[]>([]);
     
     const handlePage = (id:number, showName:string, showId:number) =>{
@@ -65,13 +67,15 @@ export default function UserView() {
               <div className=" flex w-full flex-wrap items-center justify-center">
              { filteredItems.length > 0 ? (filteredItems
                .map((item: any, index:any) => (
-                 <div className="ml-10 mb-6 w-40  sm:mt-8  sm:w-[150px] md:w-[300px] lg:w-[400px]" /*onClick={()=> handlePage(index, item.title || item.name, item.id)} key={index+1}*/>
+                 <div className="ml-10 mb-6 w-40  sm:mt-8  sm:w-[150px] md:w-[300px] lg:w-[385px]" /*onClick={()=> handlePage(index, item.title || item.name, item.id)} key={index+1}*/>
               {/*'overview' in item ? <p className="w-full">{item.overview}</p> : '' */}
+              <div className="cursor-pointer" onClick={()=> handlePage(index, item.title || item.name, item.id)}>
               {('profile_path' in item) ? (
-                <img className="rounded-lg w-96" onClick={()=> handlePage(index, item.title || item.name, item.id)} key={index+1} src={`https://image.tmdb.org/t/p/w500${item.profile_path}`} alt="" />
+                <img className="rounded-lg w-96" key={index+1} src={`https://image.tmdb.org/t/p/w500${item.profile_path}`} alt="" />
               ) : (
-                <img className="rounded-lg w-96" onClick={()=> handlePage(index, item.title || item.name, item.id)} key={index+1} src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="" />
+                <img className="rounded-lg w-96 " key={index+1} src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="" />
               )}
+              </div>
               <div className="flex flex-col items-center">
                 {('name' in item) ? <p>{item.name}</p> : <p>{item.title}</p>} 
                 <p>{item.media_type}</p>
@@ -80,8 +84,10 @@ export default function UserView() {
                 </div>
               ))
              ):
-             <div>
-
+             <div className="text-xl flex flex-col items-center">
+                <p>sorry no results. please be sure that you wrote the name right.</p>
+                <p>here's your query: {inputBar}</p>  
+                <img className="rounded-lg w-[800px] mt-2" src='https://i.pinimg.com/originals/da/8f/0e/da8f0e8dd1a7f7db5298bda9cc648a9a.gif'alt="" />
              </div>
             }
             </div>
