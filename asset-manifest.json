@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Streaming-App/static/css/main.75f81cd0.css",
-    "main.js": "/Streaming-App/static/js/main.cba0df23.js",
+    "main.css": "/Streaming-App/static/css/main.9ff5e133.css",
+    "main.js": "/Streaming-App/static/js/main.a7037fc1.js",
     "static/js/453.7cf78889.chunk.js": "/Streaming-App/static/js/453.7cf78889.chunk.js",
     "index.html": "/Streaming-App/index.html",
-    "main.75f81cd0.css.map": "/Streaming-App/static/css/main.75f81cd0.css.map",
-    "main.cba0df23.js.map": "/Streaming-App/static/js/main.cba0df23.js.map",
+    "main.9ff5e133.css.map": "/Streaming-App/static/css/main.9ff5e133.css.map",
+    "main.a7037fc1.js.map": "/Streaming-App/static/js/main.a7037fc1.js.map",
     "453.7cf78889.chunk.js.map": "/Streaming-App/static/js/453.7cf78889.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.75f81cd0.css",
-    "static/js/main.cba0df23.js"
+    "static/css/main.9ff5e133.css",
+    "static/js/main.a7037fc1.js"
   ]
 }
