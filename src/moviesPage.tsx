@@ -86,21 +86,21 @@ export default function MoviePages() {
             />
           )
         )}
-       {<div className="flex justify-center w-80 h-60 sm:w-full sm:h-80 m-4 lg:justify-start lg:mb-4 lg:ml-8 lg:h-[440px] xl:h-[530px] xl:w-[55%]  xl:ml-20">
+       {<div className="flex justify-center w-[96%] h-60 sm:w-full sm:h-80 m-4 lg:justify-start lg:mb-4 lg:ml-8 lg:h-[440px] xl:h-[530px] xl:w-[55%]  xl:ml-20">
           {loadingTrailer ? (
-            <div>Loading trailer...</div>
+            <div className="">Loading trailer...</div>
           ) : (
             <iframe
-              className="w-80 h-60 sm:w-96 sm:h-80  md:w-2/3 md:h-96 lg:h-full lg:w-full xl: xl:w-full xl:h-full rounded-lg"
+              className="w-[90%] h-[250px] sm:w-[70%] sm:h-[300px]  md:w-2/3 md:h-96 lg:h-full lg:w-full xl: xl:w-full xl:h-full rounded-lg"
               src={`https://www.youtube.com/embed/${currentMovieTrailer?.items[0].id.videoId}`}
               allowFullScreen
             />
           )}
         </div>}
       </div>
-      <hr className="w-full  border-[rgb(38,42,47)] md:mt-14 lg:mt-0"/>
+      <hr className="w-full  border-[rgb(38,42,47)] mt-24 sm:mt-2 md:mt-14 lg:mt-0"/>
 
-            <div className=" md:mt-8 lg:ml-16">
+            <div className="md:mt-8 lg:ml-16">
             <div >
                 <p className="inline text-3xl"> {currentMovieCredits?.title}:</p>
                 <p className="lg:w-3/4 mt-2 lg:text-xl">{currentMovieCredits?.overview}</p>

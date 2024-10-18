@@ -26,7 +26,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 589px) {
+@media (max-width: 599px) {
     .imog:hover .buttons {
         width: 100px;
         height: 23px;
@@ -34,3 +34,12 @@
         font-size: 12px;
     }
 }
+@media (min-width: 600px) and (max-width: 767px){
+    .imog:hover .buttons {
+        width: 150px;
+        height: 28px;
+        border: 1px solid black;
+        font-size: 12px;
+    }
+}
+

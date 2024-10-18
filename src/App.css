@@ -16,7 +16,9 @@ body::-webkit-scrollbar-thumb:hover {
 .background_container {
   background-color: #181818;
 }
-@media (min-width: 1023px) {
+
+
+@media (min-width: 1023px){
 
 button {
   margin-left: 2.8%;
@@ -100,8 +102,13 @@ img{
 }
 .head-text{
   font-size: 19px;
-  width: 35%;
+  width: 50%;
   margin-bottom: 2.3rem;
+}
+@media(min-width:1500px){
+  .head-text{
+    width: 35%;
+  }
 }
 .Subs{
   border-radius: 6px;
@@ -248,12 +255,12 @@ img{
     font-size: 32px;
   }
   .top-text{
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     margin-top: 5%;
     margin-bottom: 1%;
   }
   .head-text{
-    font-size: 1.35rem;
+    font-size: 1.1rem;
     width: 60%;
     margin-top: 2%;
     margin-bottom: 2.3rem;
@@ -391,22 +398,21 @@ img{
   .Streaming{
     color: white;
     margin-left: 2.3%;
-    margin-top: 13%;
+    margin-top: 15%;
   }
   .Streamify{
     color: rgb(18, 235, 29);
     font-size: 2.2rem;
   }
   .top-text{
-    font-size: 2.2rem;
-    margin-top: 10%;
+    font-size: 1.8rem;
+    margin-top: 0%;
     margin-bottom: 1%;
   }
   .head-text{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     width: 80%;
-    margin-bottom: 12%;
-    margin-left: 1%;
+    margin-bottom: 8%;
   }
   .Subs{
     border-radius: 6px;

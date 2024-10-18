@@ -1,0 +1,33 @@
+.swal-custom-ok-button {
+    background-color: #11ce5f; /* Green button */
+    color: #ffffff; /* White text */
+    width: 200px;
+    height: 40px;
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove default border */
+    transition: 0.5s;
+  }
+  
+  .swal-custom-ok-button:hover {
+    background-color: #07793c; /* Darker green on hover */
+  }
+  .swal-custom-popup {
+    background-color: #15171d; /* Dark background color */
+    color: #ffffff; /* White text for better visibility */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px; /* Adjust padding if needed */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Optional shadow for better effect */
+  }
+  .swal-custom-image {
+  border-radius: 38px; /* Adjust the radius to your preference */
+}
+.Subscribe-Text::after{
+    content:'Subscribe to Streamify'
+}
+@media(max-width: 639px){
+    .Subscribe-Text::after {
+        content: 'Subscribe';
+    }
+}
+  

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { FetchYouTubeTrailerUrl } from './trailer';
 import SearchBar from './searchBar';
-import dataHistory, { setViewsValueFalse, setIsnotInView, } from './dataHistory';
+import { setViewsValueFalse, setIsnotInView, } from './dataHistory';
 import { useAppDispatch, useAppSelector } from './store';
 function App() {
   const [dataRows, setDataRows] = useState([
@@ -46,8 +46,9 @@ function App() {
 
       setDataRows(updatedDataRows);
     };
-
+    
     fetchDataForAllRows();
+    console.log(dataRows)
   }, []);
 
 
@@ -108,11 +109,16 @@ function App() {
               {row.data.map((item) => (
                 <div className="movie_item  " key={item.id}>
                   <div className='imag ' >
-                    <img className=''
-                      alt=""
-                      src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`}
-                    />
+                    {
+                     item.poster_path  ?(
+                       <img className=''
+                       alt=""
+                       src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`}
+                       />
+                      ):
+                      <img src= {`https://image.tmdb.org/t/p/w300/${item.profile_path}`}/>
 
+                    }
                     <button className=''
                      onClick={() => setSelectedTrailerUrl(item)}
                      onTouchEnd={() => setSelectedTrailerUrl(item)}>Trailer</button>

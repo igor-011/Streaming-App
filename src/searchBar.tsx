@@ -10,6 +10,7 @@ import backToSchool from './backToSchool.avif'
 import backToSchoolGroup from './backToSchoolGroup.avif'
 import backToSchoolDuo from './backToSchoolDuo.avif'
 import lupe from './lupa.png'
+import './searchBar.css'
 
 export default function SearchBar() {
     const dispatch = useAppDispatch()
@@ -67,9 +68,14 @@ export default function SearchBar() {
           text: `how about searching for an actor, movie or tv show on the search bar? \nhow about jim carrey?`,
           imageUrl: 'https://i.pinimg.com/originals/f2/26/35/f22635607bc881102b9c56c9e9f1ffda.gif',
           imageWidth: 480,
-          imageHeight: 260,
-          
+          imageHeight: 265,
           imageAlt: "Custom image",
+          confirmButtonText: 'OK',
+          customClass: {
+            popup: 'swal-custom-popup',
+            image: 'swal-custom-image',
+            confirmButton: 'swal-custom-ok-button', // Custom class for the OK button
+          },
         })
       }
       const handleClickLogIn =() =>{
@@ -77,25 +83,30 @@ export default function SearchBar() {
           title: 'Sorry this page is under Development',
           text: `how about searching for an actor, movie or tv show on the search bar? \nhow about searching for: the hustle?`,
           imageUrl: 'https://i.pinimg.com/originals/48/1e/16/481e16af0fa33a04953eda0d08fb585e.gif',
-          imageWidth: 440,
-          imageHeight: 300,
+          imageWidth: 380,
+          imageHeight: 326,
           // https://i.pinimg.com/originals/eb/0f/8c/eb0f8c3e2e1a8e1508f3afa2c86ad51f.gif
           //https://steamuserimages-a.akamaihd.net/ugc/963094863873981642/CA2B847E6DD2172FB87E43C93632205A462CD5EB/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false
           imageAlt: "Custom image",
+          confirmButtonText: 'OK',
+          customClass: {
+            popup: 'swal-custom-popup',
+            image: 'swal-custom-image',
+            confirmButton: 'swal-custom-ok-button', // Custom class for the OK button
+          },
         })
       }
 
     return(
       <div className="flex justify-between h-14 text-white bg-[rgb(17,17,17)] fixed top-0 w-full">
-        
-        <p className="inline  font-serif text-[#11e511] mt-1 sm:m-2 ml-1 text-lg md:text-4xl md:relative top-[-7px]  lg:ml-10 cursor-pointer" onClick={handleDefaultPage}>Streamify</p>
+        <p className="inline  font-serif text-[#11e511] mt-1 sm:m-2 ml-1 text-2xl md:text-4xl md:relative top-[-7px]  lg:ml-10 cursor-pointer" onClick={handleDefaultPage}>Streamify</p>
         <div>
-            <input className="bg-gray-800 border-2 border-black outline-none rounded-3xl pl-4 h-10 w-28 sm:m-1 mt-1 text-md md:w-60 lg:w-96"onKeyDown={handleKeyPress} onChange={(e) =>setInput(e.target.value)} placeholder="search for an actor movie or tv show" type="text" />
-            <button className="text-white bg-gray-800 border-gray-950 md:w-14 lg:w-20 lg:h-10 sm:rounded-md md:rounded-lg w-12 h-8 text-sm hover:bg-gray-700" onClick={handleSearch}>search</button>
-        </div>
+            <input className="bg-gray-800 border-2 border-black outline-none rounded-3xl pl-4 h-10 w-38 sm:w-48 md:w-60 lg:w-96 sm:m-1  text-md "onKeyDown={handleKeyPress} onChange={(e) =>setInput(e.target.value)} placeholder="search for an actor movie or tv show" type="text" />
+           {/* <button className="text-white bg-gray-800 border-gray-950 md:w-14 lg:w-20 lg:h-10 sm:rounded-md md:rounded-lg w-12 h-8 text-sm hover:bg-gray-700" onClick={handleSearch}>search</button>
+*/}    </div>
          <div>
-            <button className="bg-[rgb(48,179,48)] hover:bg-[rgb(75,220,75)] md:w-40 md:h-8 w-20 h-12 text-sm border-black  text-white m-1  rounded-md mr-2 sm:mr-4" onClick={handleClickSubscribe}>Subscribe to Streamify</button>
-            <button className="rounded-md bg-black hover:bg-white hover:text-black border-gray-800 text-white m-1 md:w-20 md:h-8 sm:mr-10 w-12 h-8 mr-2 absolute right-4  top-16 sm:relative sm:top-[-7px] sm:right-0 sm:rounded-md md:top-0 md:mr-10 sm:mt-2 md:bottom-0 sm" onClick={handleClickLogIn}>Log In</button>
+            <button className="Subscribe-Text bg-[rgb(48,179,48)] hover:bg-[rgb(75,220,75)] w-16 h-8 sm:w-36 sm:h-8 md:w-40 md:h-8  text-sm border-black  text-white m-1  rounded-md mr-2 sm:mr-4" onClick={handleClickSubscribe}></button>
+            <button className="rounded-md bg-black hover:bg-white hover:text-black border-gray-800 text-white m-1 w-12 h-8 md:w-20 md:h-8 sm:mr-10  mr-2 sm:right-0 sm:rounded-md md:top-0 md:mr-10 sm:mt-2 md:bottom-0 sm" onClick={handleClickLogIn}>Log In</button>
          </div>
         </div>
     )

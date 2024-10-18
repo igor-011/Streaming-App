@@ -68,9 +68,9 @@ export default function UserView() {
                  <div className="ml-10 mb-6 w-40  sm:mt-8  sm:w-[150px] md:w-[300px] lg:w-[400px]" /*onClick={()=> handlePage(index, item.title || item.name, item.id)} key={index+1}*/>
               {/*'overview' in item ? <p className="w-full">{item.overview}</p> : '' */}
               {('profile_path' in item) ? (
-                <img className="rounded-lg w-96" src={`https://image.tmdb.org/t/p/w500${item.profile_path}`} alt="" />
+                <img className="rounded-lg w-96" onClick={()=> handlePage(index, item.title || item.name, item.id)} key={index+1} src={`https://image.tmdb.org/t/p/w500${item.profile_path}`} alt="" />
               ) : (
-                <img className="rounded-lg w-96" src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="" />
+                <img className="rounded-lg w-96" onClick={()=> handlePage(index, item.title || item.name, item.id)} key={index+1} src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="" />
               )}
               <div className="flex flex-col items-center">
                 {('name' in item) ? <p>{item.name}</p> : <p>{item.title}</p>} 
