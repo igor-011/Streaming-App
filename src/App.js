@@ -7,11 +7,15 @@ import { useAppDispatch, useAppSelector } from './store';
 function App() {
   const [dataRows, setDataRows] = useState([
    // { title: 'Trending', subject: 'trending', type: 'all/day', data: [] },
+   
+   { title: 'Now Playing Movies', subject: 'movie', type: 'now_playing', data: [] },
     { title: 'Trending Movies', subject: 'trending', type: 'movie/day', data: [] },
     { title: 'Trending TV', subject: 'trending', type: 'tv/day', data: [] },
     { title: 'Upcoming Movies', subject: 'movie', type: 'upcoming', data: [] },
     { title: 'Top-rated Movies', subject: 'movie', type: 'top_rated', data: [] },
+    { title: 'Top-rated TV Shows', subject: 'tv', type: 'top_rated', data: [] },
     { title: 'Popular Movies', subject: 'movie', type: 'popular', data: [] },
+    { title: 'Popular TV Shows', subject: 'tv', type: 'popular', data: [] },
   ]);
 
   const [startX, setStartX] = useState(0);
