@@ -6,7 +6,7 @@ import { setViewsValueFalse, setIsnotInView, } from './dataHistory';
 import { useAppDispatch, useAppSelector } from './store';
 function App() {
   const [dataRows, setDataRows] = useState([
-    { title: 'Top Rated Movies', subject: 'trending', type: 'all/day', data: [] },
+   // { title: 'Trending', subject: 'trending', type: 'all/day', data: [] },
     { title: 'Trending Movies', subject: 'trending', type: 'movie/day', data: [] },
     { title: 'Trending TV', subject: 'trending', type: 'tv/day', data: [] },
     { title: 'Upcoming Movies', subject: 'movie', type: 'upcoming', data: [] },
@@ -48,7 +48,9 @@ function App() {
     };
     
     fetchDataForAllRows();
-    console.log(dataRows)
+    if(dataRows[0].data){
+      console.log(dataRows)
+    }
   }, []);
 
 
