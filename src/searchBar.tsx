@@ -102,7 +102,7 @@ export default function SearchBar() {
       <div className="flex justify-between h-14 text-white bg-[rgb(17,17,17)] fixed top-0 w-full">
         <p className="inline  font-serif text-[#11e511] mt-1 sm:m-2 ml-1 text-2xl md:text-4xl md:relative top-[-7px]  lg:ml-10 cursor-pointer" onClick={handleDefaultPage}>Streamify</p>
         <div>
-            <input className="bg-gray-800 border-2 border-black outline-none rounded-3xl pl-4 h-10 w-48 sm:w-48 md:w-60 lg:w-96 sm:m-1  text-md "onKeyDown={handleKeyPress} onChange={(e) =>setInput(e.target.value)} placeholder="search for an actor movie or tv show" type="text" />
+            <input className="bg-gray-800 border-2 border-black outline-none rounded-3xl pl-4 h-10 w-52 sm:w-48 md:w-60 lg:w-96 sm:m-1  text-md "onKeyDown={handleKeyPress} onChange={(e) =>setInput(e.target.value)} placeholder="search for an actor movie or tv show" type="text" />
            {/* <button className="text-white bg-gray-800 border-gray-950 md:w-14 lg:w-20 lg:h-10 sm:rounded-md md:rounded-lg w-12 h-8 text-sm hover:bg-gray-700" onClick={handleSearch}>search</button>
 */}    </div>
          <div>
