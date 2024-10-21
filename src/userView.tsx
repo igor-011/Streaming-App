@@ -20,11 +20,12 @@ export default function UserView() {
     const [filteredItems, setFilteredItems] = useState<any[]>([]);
     
     const handlePage = (id:number, showName:string, showId:number) =>{
-      const item = data?.results[id]
+      const item = filteredItems[id]
       dispatch(makeEven())
       dispatch(resetTrailerData())
       dispatch(setViewsValueTrue())
       dispatch(setIsnotInView())
+      console.log('media type is ',item?.media_type, 'item is: ', data?.results[id],)
       if(item?.media_type === 'movie'){
         dispatch(GetMovieCombinedCredits(showId))
         dispatch(GetMovieCredits(showId))
@@ -57,9 +58,9 @@ export default function UserView() {
         setFilteredItems(filtered);
       }
       //filterItems = actorCredits?.combined_credits.cast.filter((item) => item.poster_path || item.backdrop_path)
-    }, [data]);
+    }, [data,]);
         return (
-            <div className="bg-[rgb(24,25,24)] text-white mt-14">
+          <div className="bg-[rgb(24,25,24)] text-white mt-14">
               <SearchBar />
 
               <h1 className="text-white text-4xl ml-4 mt-16">Results: </h1>

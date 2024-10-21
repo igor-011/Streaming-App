@@ -106,8 +106,8 @@ export default function SearchBar() {
            {/* <button className="text-white bg-gray-800 border-gray-950 md:w-14 lg:w-20 lg:h-10 sm:rounded-md md:rounded-lg w-12 h-8 text-sm hover:bg-gray-700" onClick={handleSearch}>search</button>
 */}    </div>
          <div>
-            <button className="Subscribe-Text bg-[rgb(48,179,48)] hover:bg-[rgb(75,220,75)] w-16 h-8 sm:w-36 sm:h-8 md:w-40 md:h-8  text-sm border-black  text-white m-1  rounded-md mr-2 sm:mr-4" onClick={handleClickSubscribe}></button>
-            <button className="rounded-md bg-black hover:bg-white hover:text-black border-gray-800 text-white m-1 w-12 h-8 md:w-20 md:h-8 sm:mr-10  mr-2 sm:right-0 sm:rounded-md md:top-0 md:mr-10 sm:mt-2 md:bottom-0 sm" onClick={handleClickLogIn}>Log In</button>
+            <button className="Subscribe-Text bg-[rgb(48,179,48)] hover:bg-[rgb(75,220,75)] w-16 h-8 sm:w-36 sm:h-8 md:w-40 md:h-8  text-sm border-black  text-white m-1  rounded-md mr-1 sm:mr-4" onClick={handleClickSubscribe}></button>
+            <button className="rounded-md bg-black hover:bg-white hover:text-black border-gray-800 text-white mt-1 w-12 h-8 md:w-20 md:h-8 sm:mr-10  mr-2 sm:right-0 sm:rounded-md md:top-0 md:mr-10 sm:mt-2 md:bottom-0 sm" onClick={handleClickLogIn}>Log In</button>
          </div>
         </div>
     )
