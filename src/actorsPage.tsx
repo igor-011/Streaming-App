@@ -100,7 +100,9 @@ export default function ActorsPage() {
         {currentCast && currentCast
         .map((item: any, index:number) =>(
            
-          <div onClick={() => handlePageMedia(index, item.title || item.name )} className="imog flex items-center flex-col m-1 sm:m-2 md:m-4 lg:m-6 cursor-pointer"> 
+          <div  className="imog flex items-center flex-col m-1 sm:m-2 md:m-4 lg:m-6"> 
+
+          <div className=" cursor-pointer" onClick={() => handlePageMedia(index, item.title || item.name )}>
           {
             item?.poster_path ? (
               <img className="w-40 sm:w-48 md:w-60 lg:w-64 object-contain rounded-lg" src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} />
@@ -110,6 +112,7 @@ export default function ActorsPage() {
               <p>sorry no show photo</p>
             )
           }
+          </div>
           <div className="flex  flex-col items-center text-center text-sm md:text-md w-48 m-2">
           <button className="buttons " onClick={() => handlePageMedia(index, item.title || item.name )} key={index+1}>see more</button>
           {('title' in item) ? <p>{item.title}</p> : <p>{item.name}</p>}
