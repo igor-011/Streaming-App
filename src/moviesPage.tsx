@@ -32,6 +32,12 @@ export default function MoviePages() {
   const [currentMovieCredits, setCurrentMovieCredits] = useState(movieCombinedCredits)
 
   useEffect(() => {
+    console.log('movieCombined', movieCombinedCredits)
+    if(viewValueBool === false && isInview === false){
+      navigate("/")
+    }
+    //
+    console.log('viewValueBool', viewValueBool,  "isInView", isInview)
     if(viewValueBool === false && isInview === true){
       dispatch(setIsnotInView())
       dispatch(setViewsValueTrue())

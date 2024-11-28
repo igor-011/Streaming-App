@@ -17,6 +17,8 @@ export default function UserView() {
     const navigate = useNavigate()
     const data = useAppSelector(state => state.user.data) as personApiData | null;
     const inputBar = useAppSelector(state => state.dataHistory.SeachBarInputUserView)
+    const index = useAppSelector(state => state.dataHistory.currentIndex)
+    const userView = useAppSelector(state => state.dataHistory.UserView)
     const [filteredItems, setFilteredItems] = useState<any[]>([]);
     
     const handlePage = (id:number, showName:string, showId:number) =>{
@@ -46,6 +48,10 @@ export default function UserView() {
     
     
     useEffect(() => {
+      if(userView === false){
+        window.history.go(-index -1)
+      }
+      console.log('index', index)
       dispatch(setIsInView())
       if (data && 'results' in data && data.results.length > 0) {
         console.log(data.results[0].name, data);
@@ -62,7 +68,7 @@ export default function UserView() {
         return (
           <div className="bg-[rgb(24,25,24)] text-white mt-14">
               <SearchBar />
-
+              
               <h1 className="text-white text-4xl ml-4 mt-16">Results: </h1>
 
               <div className=" flex w-full flex-wrap items-center justify-center">

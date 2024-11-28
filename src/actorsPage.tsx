@@ -61,6 +61,9 @@ export default function ActorsPage() {
   const history = window.history
 
   useEffect(() =>{
+    if(viewValueBool === false && isInview === false){
+      navigate("/")
+    }
     if(viewValueBool === false && isInview === true){
       dispatch(setIsnotInView())
       dispatch(setViewsValueTrue())

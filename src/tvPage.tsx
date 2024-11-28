@@ -32,6 +32,9 @@ export default function TvPage(){
     const [currentTVTrailer, setCurrentTvTrailer] = useState(showTrailer)
 
     useEffect(() => {
+        if(viewValueBool === false && isInview === false){
+            navigate("/")
+          }
         if(viewValueBool === false && isInview === true){
             dispatch(setIsnotInView())
             dispatch(setViewsValueTrue())

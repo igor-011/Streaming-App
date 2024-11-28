@@ -2,14 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GetData } from "./userSlice";
 import { useAppDispatch, useAppSelector } from "./store";
-import { setIsnotInView, setViewsValueFalse, updateIndex, setSearchBarInput } from "./dataHistory";
+import { setIsnotInView, setViewsValueFalse, updateIndex, setSearchBarInput, updateUserView}  from "./dataHistory";
 import Swal from "sweetalert2";
-import hirasawa from './hirasawa.jpg';
-import kana from './kana cabeça na mesa.jpg'
-import backToSchool from './backToSchool.avif'
-import backToSchoolGroup from './backToSchoolGroup.avif'
-import backToSchoolDuo from './backToSchoolDuo.avif'
-import lupe from './lupa.png'
 import './searchBar.css'
 
 export default function SearchBar() {
@@ -36,6 +30,7 @@ export default function SearchBar() {
         }
         else if(viewValueBool === false && index < 1){
           dispatch(GetData(input))
+          dispatch(updateUserView())
           navigate('/UserView')
           console.log('second option')
         }

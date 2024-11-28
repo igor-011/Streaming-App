@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import UserView from "./userView";
 
 const initialState = {
     data: [] as {index:number, data:any}[],
@@ -9,7 +10,8 @@ const initialState = {
     viewsValue: 0,
     viewValueBool: false,
     isInView: false,
-    SeachBarInputUserView: ''
+    SeachBarInputUserView: '',
+    UserView: false
 }
 
 const dataHistory = createSlice({
@@ -58,10 +60,13 @@ const dataHistory = createSlice({
       },
       setSearchBarInput:(state, action)=>{
         state.SeachBarInputUserView = action.payload
+      },
+      updateUserView:(state)=>{
+        state.UserView = true
       }
     },
 
   });
 
-export const { updateApiData, renderItems, unrenderItems, updateIndex, updateHistory, makeEven, setStackHistory, setViewsValueFalse, setViewsValueTrue, setIsInView, setIsnotInView, setSearchBarInput} = dataHistory.actions;
+export const { updateApiData, renderItems, unrenderItems, updateIndex, updateHistory, makeEven, setStackHistory, setViewsValueFalse, setViewsValueTrue, setIsInView, setIsnotInView, setSearchBarInput, updateUserView} = dataHistory.actions;
 export default dataHistory.reducer;

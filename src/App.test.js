@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import store from './store';
 import App from './App';
+import SearchBar from './searchBar';
 
 // Mock localStorage before any tests run
 const localStorageMock = (() => {
@@ -37,27 +38,20 @@ beforeAll(() => {
   });
 });
 
-test('renders learn react link and checks for On Streamify', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
-    </Provider>
-  );
 
   // Check if "On Streamify" is on the screen
   //const streamifyElement = getByText(/On Streamify/i); // Use regex for case-insensitive match
  // expect(streamifyElement).toBeInTheDocument(); // Assert that the element is in the document
-});
+
 test('renders On Streamify', () => {
   render(
     <Provider store={store}>
       <MemoryRouter>
-        <App />
+        <App/>
       </MemoryRouter>
     </Provider>
   );
+  expect(screen.getByText(/HELLO/i)).toBeInTheDocument
   expect(screen.getByText(/On Streamify/i)).toBeInTheDocument();
   expect(screen.getByText(/Explore captivating shows and series, handpicked for you. From drama to comedy, sci-fi to romance, we've got it all. Start Watching now!/i)).toBeInTheDocument();
 });
