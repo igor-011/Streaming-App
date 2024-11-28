@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import UserView from './userView';
 import ActorsPage from './actorsPage';
 import MoviePages from './moviesPage';
@@ -80,6 +80,7 @@ const AppRouter = () => {
             <Route path="/actors" element={<ActorsPage />} />
             <Route path="/movies" element={<MoviePages />} />
             <Route path="/tv" element={<TvPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </NavigationHandler>
 
