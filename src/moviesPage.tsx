@@ -92,7 +92,7 @@ export default function MoviePages() {
             />
           )
         )}
-       {<div className="flex justify-center w-[96%] h-60 sm:w-full sm:h-80 m-4 lg:justify-start lg:mb-4 lg:ml-8 lg:h-[440px] xl:h-[530px] xl:w-[55%]  xl:ml-20">
+       {<div className="flex justify-center w-[96%] h-60 sm:w-full sm:h-80 m-4 lg:justify-start lg:mb-4 lg:ml-8 lg:h-[440px] xl:h-[60vh] xl:w-[50vw]  xl:ml-20">
           {loadingTrailer ? (
             <div className="">Loading trailer...</div>
           ) : (

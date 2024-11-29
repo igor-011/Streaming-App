@@ -81,7 +81,7 @@ export default function TvPage(){
                 tvCombined &&
                 <img className="w-40 sm:w-60  lg:w-80 xl:w-96 lg:m-8 lg:mb-8 rounded-lg" src={`https://image.tmdb.org/t/p/w500${currentTvCredits?.poster_path}`} alt="" />
             )}
-            {<div className="flex justify-center  w-[96%] h-60 sm:w-full sm:h-80 m-4 lg:justify-start lg:mb-4 lg:ml-8 lg:h-[440px] xl:h-[530px] xl:w-[55%]  xl:ml-20">
+            {<div className="flex justify-center  w-[96%] h-60 sm:w-full sm:h-80 m-4 lg:justify-start lg:mb-4 lg:ml-8 lg:h-[440px] xl:h-[60vh] xl:w-[50vw]  xl:ml-20">
                 {loadingTrailer ? (
                  <div>loading ...</div>   
                 ):
