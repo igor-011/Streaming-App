@@ -328,7 +328,7 @@ img{
 
   .movie_item {
     padding-top: 20px;
-    padding-left: 30px;
+    padding-left: 10px;
     padding-right: 30px;
     padding-bottom: 10px;
     display: flex;
@@ -482,8 +482,8 @@ img{
 
   .movie_item {
     padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -495,7 +495,6 @@ img{
   }
 
   .movie_name {
-
     font-size: 1.2rem;
     font-weight: bold;
   }
