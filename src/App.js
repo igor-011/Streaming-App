@@ -144,7 +144,6 @@ function App() {
       <SearchBar />
       
       <div className="background_container">
-        <button onClick={() => console.log(dataRows)}>click me </button>
         <div className="Streaming">
           <div className="top-text">On Streamify</div>
           <div className="head-text">
