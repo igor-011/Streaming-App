@@ -30,4 +30,6 @@
         content: 'Subscribe';
     }
 }
-  
+.transition{
+  transition: 0.5s
+} 

@@ -19,7 +19,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .spinner {
   position: fixed;
-  left: 12%;
+  left: 15%;
   width: 50px;
   height: 50px;
   border: 5px solid rgba(0, 0, 0, 0.1);
@@ -37,7 +37,18 @@ body::-webkit-scrollbar-thumb:hover {
     transform: rotate(360deg);
   }
 }
-
+.Titles{
+  transition: 0.5s;
+}
+.Titles:hover{
+  color: rgb(42, 255, 42);
+}
+.imag{
+  transition: 0.5s;
+}
+.imag:hover{
+  transition-duration: 2s;
+}
 
 @media (min-width: 1023px){
 
@@ -84,6 +95,7 @@ img{
   height: 300px;
   object-fit: contain;
   pointer-events: none;
+
 }
 .row-title {
   font-size: 1.5rem; /* Adjust the font size as needed */

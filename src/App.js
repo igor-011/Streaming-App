@@ -1,8 +1,17 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { FetchYouTubeTrailerUrl } from './trailer';
+import { GetData } from './userSlice';
 import SearchBar from './searchBar';
-import { setViewsValueFalse, setIsnotInView, } from './dataHistory';
+import { useNavigate } from "react-router-dom";
+import { setViewsValueFalse, setIsnotInView, updateUserView } from './dataHistory';
+import { GetActorCombinedCredits } from "./actorsSlice";
+import { GetMovieCombinedCredits } from "./moviesSlice";
+import { GetMovieCredits } from "./movieSliceCredits";
+import { GetTvCombinedCredits } from "./tvSlice";
+import { GetTvCredits } from "./tvSliceCredits";
+import { GetTrailerGenerator, resetTrailerData } from "./trailerGenerations";
+import { makeEven, setViewsValueTrue, setIsInView } from "./dataHistory"
 import { useAppDispatch, useAppSelector } from './store';
 
 function App() {
@@ -25,6 +34,8 @@ function App() {
   const stackHistory = useAppSelector((state) => state.dataHistory.stackhistory);
   const index = useAppSelector((state) => state.dataHistory.currentIndex);
   const dispatch = useAppDispatch();
+  const data = useAppSelector(state => state.user.data)
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(setViewsValueFalse());
@@ -53,6 +64,48 @@ function App() {
 
     fetchDataForAllRows();
   }, [dispatch]);
+
+
+  const goToTrailerPage = async (items) =>{
+    const resultsAction = await dispatch(GetData(items.original_title ? items.original_title : items.original_name))
+    console.log(resultsAction)
+    console.log(resultsAction.payload.results)
+    let ra = resultsAction.payload.results
+    for(let i=0; i< ra.length; i++){
+      if(ra[i].title === items.title && ra[i].overview === items.overview && ra[i].release_date === items.release_date){
+        console.log('found it in index: ',i)
+        ra = ra[i]
+        dispatch(updateUserView())
+
+        dispatch(makeEven())
+        dispatch(resetTrailerData())
+        dispatch(setViewsValueTrue())
+        dispatch(setIsnotInView())
+        if(ra?.media_type === 'movie'){
+          dispatch(GetMovieCombinedCredits(ra.id))
+          dispatch(GetMovieCredits(ra.id))
+          dispatch(GetTrailerGenerator(ra.original_title ? ra.original_title : ra.original_name))
+          navigate('/UserView')
+          navigate('/movies')
+        }
+        else if (ra?.media_type === 'tv') {
+          dispatch(GetTvCredits(ra.id))
+          dispatch(GetTvCombinedCredits(ra.id))
+          dispatch(GetTrailerGenerator(ra.original_title ? ra.original_title : ra.original_name))
+          navigate('/UserView')
+          navigate('/tv')
+      }
+        else{
+          dispatch(GetActorCombinedCredits(ra.id))
+          navigate('/UserView')
+          navigate('/actors')
+      } 
+        break
+      }
+      else console.log(i)
+    }
+  }
+
 
   const handleOnMouseDown = (e) => {
     setIsScrolling(true);
@@ -91,6 +144,7 @@ function App() {
       <SearchBar />
       
       <div className="background_container">
+        <button onClick={() => console.log(dataRows)}>click me </button>
         <div className="Streaming">
           <div className="top-text">On Streamify</div>
           <div className="head-text">
@@ -98,7 +152,7 @@ function App() {
           </div>
         </div>
         {dataRows.map((row, index) => (
-          <div key={index}>
+          <div className='parentDiv' key={index}>
             <h2 className="Titles">{row.title}</h2>
 
             <div
@@ -128,8 +182,9 @@ function App() {
                           <img src={`https://image.tmdb.org/t/p/w300/${item.profile_path}`} />
                         )}
                         <button
-                          onClick={() => setSelectedTrailerUrl(item)}
-                          onTouchEnd={() => setSelectedTrailerUrl(item)}
+                          onClick={() =>goToTrailerPage(item)}
+                          /*onClick={() => setSelectedTrailerUrl(item)}
+                          onTouchEnd={() => setSelectedTrailerUrl(item)}*/
                         >
                           Trailer
                         </button>
