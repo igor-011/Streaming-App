@@ -94,7 +94,7 @@ export default function SearchBar() {
       }
 
     return(
-      <div className="flex justify-between h-14 text-white bg-[rgb(17,17,17)] fixed top-0 w-full z-10">
+      <div className="flex justify-between h-14 text-white bg-[rgb(19,19,19)] fixed top-0 w-full z-10">
         <p className="transition inline  font-serif text-[#11e511] hover:text-[rgb(14,133,14)] mt-1 sm:m-2 ml-1 text-2xl md:text-4xl md:relative top-[-7px]  lg:ml-10 cursor-pointer" onClick={handleDefaultPage}>Streamify</p>
         <div>
             <input className="bg-gray-800 border-2 border-black outline-none rounded-3xl pl-4 h-10 w-52 sm:w-48 md:w-60 lg:w-96 sm:m-1  text-md "onKeyDown={handleKeyPress} onChange={(e) =>setInput(e.target.value)} placeholder="search for an actor movie or tv show" type="text" />

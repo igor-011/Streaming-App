@@ -180,7 +180,7 @@ function App() {
                         ) : (
                           <img src={`https://image.tmdb.org/t/p/w300/${item.profile_path}`} />
                         )}
-                        <button
+                        <button 
                           onClick={() =>goToTrailerPage(item)}
                           /*onClick={() => setSelectedTrailerUrl(item)}
                           onTouchEnd={() => setSelectedTrailerUrl(item)}*/
