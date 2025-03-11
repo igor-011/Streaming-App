@@ -16,9 +16,9 @@ import { useAppDispatch, useAppSelector } from './store';
 
 function App() {
   const [dataRows, setDataRows] = useState([
-    { title: 'Now Playing Movies', subject: 'movie', type: 'now_playing', data: [], loading: true },
     { title: 'Trending Movies', subject: 'trending', type: 'movie/day', data: [], loading: true },
     { title: 'Trending TV', subject: 'trending', type: 'tv/day', data: [], loading: true },
+    { title: 'Now Playing Movies', subject: 'movie', type: 'now_playing', data: [], loading: true },
     { title: 'Upcoming Movies', subject: 'movie', type: 'upcoming', data: [], loading: true },
     { title: 'Top-rated Movies', subject: 'movie', type: 'top_rated', data: [], loading: true },
     { title: 'Top-rated TV Shows', subject: 'tv', type: 'top_rated', data: [], loading: true },
