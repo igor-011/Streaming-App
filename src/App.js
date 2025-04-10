@@ -167,9 +167,11 @@ function App() {
               {row.loading ? (
                 <div className="spinner"></div>
               ) : (
+                
                 row.data
                   .filter((item) => item.poster_path)
                   .map((item) => (
+                    
                     <div className="movie_item" key={item.id}>
                       <div className="imag">
                         {item.poster_path ? (
